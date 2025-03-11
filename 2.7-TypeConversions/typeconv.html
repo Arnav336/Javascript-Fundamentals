@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let value = true;
+        let str = "123";
+        num=Number(str);
+        alert(value);
+        alert(typeof value);
+        alert(String(value));
+        alert(typeof String(value));
+        alert(str);
+        alert(typeof str);
+        alert(num);
+        alert(typeof num);
+        alert("This isn't an empty value hence"+" "+Boolean(1));
+        alert("This is an empty value hence"+" "+Boolean(0));//This is false
+        alert("This is not an empty String hence"+" "+Boolean("0"));//This is true
+        //Empty Strings are always false in boolean context wheras non-empty strings are always true String of 0 is true but a number 0 is not
+        alert("This is not an empty string hence"+" "+Boolean("hello"));
+        alert("This is an empty String hence"+" "+Boolean(""));
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <script>
+            let a=1,b=1;
+            let c=++a; 
+            alert(a);
+            let d=b++;
+            alert(b);
+            alert("This is a Prefix Operator hence the value is incremented to\t"+c); //2  
+            alert("This is a postfix Operator hence the value remains\t"+d+"\tand then the value of b is incremented to\t"+b); //1
+            alert("The value of d remains\t"+d+"\tunless d is incremented")
+            let e=d++;
+            alert("Value of e is now "+e+" and the value of d is now incremented to\t"+d);
+        </script>
+    </body>
+</html>
