@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+    <script>
+        let age=prompt("Enter your age",0);
+        function checkAge(age) {
+            if (age > 18) {
+              return true;
+            }
+            return confirm('Did parents allow you?');
+          }
+          alert(checkAge(age));
+          alert("No need of else condition here since even without else it passes down to the confirm box if age<18 and if >18 bcz of the return statement it doesnt go to the confirm section");
+    </script>
+</body>
+</html>

@@ -7,11 +7,11 @@
 </head>
 <body>
     <script>
-        let i = 3;
-        while (i) {
-        alert( i-- );
-        }
-        alert("This code outputs 3 2 1 Because once it gets to 0 the loop exits since 0 is a falsy value")
+        function ask(question, yes, no) {
+            if (confirm(question)) yes();
+            else no();
+          }
+        ask("Do You Agree",()=>alert("You Agreed"),()=>alert("You cancelled the execution"));
     </script>
 </body>
 </html>

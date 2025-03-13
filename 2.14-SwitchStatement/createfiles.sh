@@ -11,7 +11,7 @@ fi
 
 # Loop through numbers from 1 to n and create the HTML files
 for i in $(seq 1 "$num_files"); do
-  cat <<EOF > "Task${i}.html"
+  cat <<EOF > "task${i}.html"
 <!DOCTYPE html>
 <html lang="en">
 <head>

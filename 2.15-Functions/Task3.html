@@ -7,9 +7,13 @@
 </head>
 <body>
     <script>
-        for (let i = 0; i < 5; ++i) alert( i );
-        for (let i = 0; i< 5; i++) alert( i );
-        alert("Outputs 0-4 in both cases since i is being checked not increment(i)")
+        function min(a,b){
+            if(a<b){
+                return a;
+            }
+            return b;
+        }
+        alert(min(2,5))
     </script>
 </body>
 </html>
