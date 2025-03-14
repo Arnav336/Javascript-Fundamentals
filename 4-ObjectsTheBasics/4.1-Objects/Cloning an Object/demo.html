@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //Normal Cloning
+        let a={};
+        let person={
+            name:"John",
+            age:20,
+            work:"IT"
+        }
+        for(let key in person){
+            a[key]=person[key]
+        }
+        //Now we can use properties of person in a 
+        a.name="Pete";
+        a.age=21;
+        a.work="Student";
+        alert(JSON.stringify(a));
+    //Cloning using Object.Assign
+        //Cloning into an empty object
+        let b= Object.assign({},person)
+        b.name="Martin";
+        b.age="23";
+        b.work="Doctor";
+        alert(JSON.stringify(b))
+        //Cloning into a partially filled object
+        let c= Object.assign({friend:"Jeremy"},person);
+        c.name="Nathan";
+        c.age="19"
+        c.work=undefined
+        alert(JSON.stringify(c))
+    //Nested Cloning-For Cloning Nested Objects
+    let guy={
+            name:"Wick",
+            age:20,
+            work:"IT",
+            size:{
+                height:200,
+                width:34
+            }
+        }
+        let d=structuredClone(guy)
+        d.name="Jason"
+        d.age=22
+        d.work="CEO"
+        d.size.width=50
+        alert(JSON.stringify(d))
+
+    </script>
+</body>
+</html>

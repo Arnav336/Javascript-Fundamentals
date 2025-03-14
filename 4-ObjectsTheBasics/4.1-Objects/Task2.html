@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    <script>
+        function isEmpty(obj){
+            for (let key in obj){
+                return false;
+            }
+            return true;
+        }
+        let Student={
+            "name":"Ben",
+            "number":10,
+            "watch":"Omnitrix",
+            "alien":"Swampfire"
+        };
+        let Teacher={
+
+        }
+        alert(isEmpty(Student));
+        alert(isEmpty(Teacher));
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<body>
+    <script>
+        /*let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+    };
+
+    multiplyNumeric(menu);
+*/
+    function multiplyNumeric(obj) {
+    for (let key in obj) {
+        if (typeof obj[key] == 'number') {
+        obj[key] *= 2;
+        }
+    }
+    return obj; // Return the modified object
+    }
+
+    let menu = {
+    "width": 200,
+    "height": 300,
+    "title": "My menu",
+    };
+
+    console.log(menu); //Original menu
+    console.log(multiplyNumeric(menu)); //Modified menu
+    </script>
+</body>
+</html>
