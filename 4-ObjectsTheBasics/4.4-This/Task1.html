@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+    <p><h1>THIS KEYWORD</h1></p>
+    <script>
+        function makeUser(){
+  return {
+    name: "John",
+    age:18,
+    ref(){
+        return this
+  },
+    SayAge: function(){alert(`Since I am ${this.age} years old I can drive`)}//same as makeUser.Age
+}
+}
+let user = makeUser();
+
+console.log(user.ref().name); // What's the result?
+console.log(this)//Window Properties
+console.log(user.SayAge())//Context of the function makeUser
+    </script>
+</body>
+</html>
