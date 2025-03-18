@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<body>
+    <script>
+        function sumInput() {
+            let sum = 0;
+            let arr = [];
+            
+            while (true) {
+                let a = prompt("Enter a number");
+                
+                if (a === null || a === "" || !isFinite(a)) {
+                break;
+                }
+                
+                arr.push(+a);
+            }
+            
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            
+            return sum;
+        }
+            alert(sumInput());
+    </script>
+</body>
+</html>

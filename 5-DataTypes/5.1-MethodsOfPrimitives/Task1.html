@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+    <script>
+        let str = "Hello";
+        str.test = 5;      // The temporary wrapper object gets this property 
+        console.log(str.test);  //Returns Undefined since a new Temporary Wrapper Object is created without the property and immediately discarded
+    </script>
+</body>
+</html>

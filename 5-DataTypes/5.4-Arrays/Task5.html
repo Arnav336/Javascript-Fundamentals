@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<body>
+    <script>
+        function getMaxSubSum(arr) {
+        let maxSum = 0;
+        let currentSum = 0;
+        let startIndex = 0;
+        let endIndex = 0;
+        let maxStartIndex = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            currentSum += arr[i];
+
+            if (currentSum > maxSum) {
+            maxSum = currentSum;
+            maxStartIndex = startIndex;
+            endIndex = i;
+            }
+
+            if (currentSum < 0) {
+            currentSum = 0;
+            startIndex = i + 1;
+            }
+        }
+
+        return {
+            maxSum: maxSum,
+            subarray: arr.slice(maxStartIndex, endIndex + 1)
+        };
+        }
+        let a=[1,-2, 3, 4, -9, 6]
+        alert(JSON.stringify(getMaxSubSum(a)))
+    </script>
+</body>
+</html>
