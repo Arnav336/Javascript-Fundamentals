@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 11</title>
+</head>
+<body>
+    <script>
+        function unique(arr) {
+            let newarr=[]
+            for(let i of arr){
+                if(!newarr.includes(str)){
+                    newarr.push(i)
+                }
+            }
+            return newarr;
+        }
+
+        let strings = ["Hare", "Krishna", "Hare", "Krishna",
+        "Krishna", "Krishna", "Hare", "Hare", ":-O"
+        ];
+
+        alert( unique(strings) ); 
+    </script>
+</body>
+</html>

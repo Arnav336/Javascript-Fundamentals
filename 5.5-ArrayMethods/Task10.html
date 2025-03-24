@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 10</title>
+</head>
+<body>
+    <script>
+        function shuffle(arr){
+            //Start from end of array and swap each element with a randomly selected element from the section of the array that comes before it.
+            for(let i=arr.length-1;i>0;i--){
+                let j=Math.floor(Math.random()*(i+1));
+                //Swap i and j
+                [arr[i],arr[j]]=[arr[j],arr[i]];
+            }
+            return arr;
+        }
+        let arr = [31,2323,22223,99393,8443838,1112]
+        alert(shuffle(arr))
+    </script>
+</body>
+</html>
