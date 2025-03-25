@@ -11,6 +11,7 @@ if [[ -f "createfiles.sh" && -f "createtestfiles.sh" ]]; then
     # Copy both scripts into the new folder
     cp createfiles.sh "$FOLDER_NAME/"
     cp createtestfiles.sh "$FOLDER_NAME/"
+    cp createhtmlfiles.sh "$FOLDER_NAME/"
     echo "Copied createfiles.sh and createtestfiles.sh to $FOLDER_NAME/"
 
     # Move into the newly created directory
