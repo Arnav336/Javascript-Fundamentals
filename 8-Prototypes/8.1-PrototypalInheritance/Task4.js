@@ -10,7 +10,9 @@ let hamster = {
     __proto__: hamster,
     stomach: []
   };
-  let lazy = { 
+  
+  let lazy = {
+     
     __proto__: hamster,
     stomach: []
   };
