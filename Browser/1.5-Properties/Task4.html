@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<body>
+    <h1>HEADER</h1>
+    <script>
+        //Modifying Prototypes
+        Element.prototype.sayHi=function(){
+            alert(`Output: ${this.tagName}`);
+        }
+        document.body.sayHi();
+        document.documentElement.sayHi();
+        document.querySelector('h1').sayHi();
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: #c2c5cc;
+      font-family: monospace;
+    }
+
+    #clock {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .red { color: red; }
+    .green { color: green; }
+    .blue { color: blue; }
+
+    button {
+      padding: 5px 10px;
+      margin-right: 5px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="clock">
+    <span class="red">hh</span>:<span class="green">mm</span>:<span class="blue">ss</span>
+  </div>
+
+  <button onclick="startClock()">Start</button>
+  <button onclick="stopClock()">Stop</button>
+
+  <script src="Task6.js"></script>
+
+</body>
+</html>

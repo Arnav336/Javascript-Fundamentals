@@ -1,0 +1,19 @@
+<body id="body" type="number">
+    <form>
+      <input id="input" type="text">
+    </form>
+  
+    <script>
+      let body = document.getElementById("body");
+      let input = document.getElementById("input");
+  
+      alert(input.type);
+      alert(body.type);  
+  
+      body.setAttribute("type", "text"); 
+  
+      alert(body.hasAttribute("type")); 
+      alert(body.getAttribute("type")); 
+    </script>
+  </body>
+  
