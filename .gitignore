@@ -1,3 +1,4 @@
 .qodo
 /nodemodules
 .swp
+.promise.js
