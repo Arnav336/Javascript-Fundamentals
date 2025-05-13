@@ -1,4 +1,7 @@
 .qodo
-/nodemodules
+node_modules
 .swp
-.promise.js
+promise.js
+demo.js
+demo1.js
+demo.html
