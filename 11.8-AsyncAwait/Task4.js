@@ -43,7 +43,6 @@ function customPromiseAllWait(promises) {
       if (errors.length > 0) {
         throw new AggregateError(errors, 'One or more promises failed');
       }
-  
       return values;
     });
   }

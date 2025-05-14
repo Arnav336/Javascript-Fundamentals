@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+    <style>
+    #field {
+      position:relative;
+      width: 200px;
+      height: 150px;
+      border: 10px solid black;
+      background-color: #00FF00;
+      overflow: hidden;
+    }
+    #ball {
+        position: absolute;
+        left: 0; /* relative to the closest positioned ancestor (field) */
+        top: 0;
+        transition: 1s all; /* CSS animation for left/top makes the ball fly */
+    }
+    .body{
+        height:2000px;
+    }
+    </style>
+</head>
+
+<body>
+    Click on a field to move the ball there.
+  <br> The ball should never leave the field.
+  <div id="field">
+    <img src="https://en.js.cx/clipart/ball.svg" id="ball" alt="404"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+  </div>
+    <script>
+        let field = document.getElementById("field");
+let ball = document.getElementById("ball");
+
+field.addEventListener("click", function (e) {
+    let fieldRect = field.getBoundingClientRect();
+
+    
+    let clickX = e.clientX - fieldRect.left;
+    let clickY = e.clientY - fieldRect.top;
+
+    
+    let ballWidth = ball.offsetWidth;
+    let ballHeight = ball.offsetHeight;
+
+    
+    let maxX = field.clientWidth - ballWidth;
+    let maxY = field.clientHeight - ballHeight;
+
+    
+    let ballX = clickX - ballWidth / 2;
+    let ballY = clickY - ballHeight / 2;
+
+
+    ballX = Math.max(0, Math.min(ballX, maxX));
+    ballY = Math.max(0, Math.min(ballY, maxY));
+
+
+    ball.style.left = ballX + "px";
+    ball.style.top = ballY + "px";
+  });
+    </script>
+</body>
+</html>
