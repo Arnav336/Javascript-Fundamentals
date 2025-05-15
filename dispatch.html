@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Playground</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+#outer {
+  background-color: #f8d7da;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+#middle {
+  background-color: #d1ecf1;
+  padding: 20px;
+}
+
+#inner {
+  padding: 10px;
+  font-weight: bold;
+}
+
+ul#list {
+  margin-top: 20px;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+ul#list li {
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+</style>
+<body>
+
+  <div id="outer">
+    Outer DIV
+    <div id="middle">
+      Middle DIV
+      <button id="inner">Inner BUTTON</button>
+    </div>
+  </div>
+
+  <ul id="list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <script>
+    const outer = document.getElementById("outer");
+    const middle = document.getElementById("middle");
+    const inner = document.getElementById("inner");
+    const list = document.getElementById("list");
+
+    //Capturing
+    inner.addEventListener("click", () => console.log("inner CAPTURE \n----------------"), { capture: true });
+    outer.addEventListener("click", () => console.log("outer CAPTURE"), { capture: true});
+    middle.addEventListener("click", () => console.log("middle CAPTURE"), { capture: true });
+    
+
+    //Bubbling
+    outer.addEventListener("click", () => console.log("outer BUBBLE"));
+    middle.addEventListener("click", () => console.log("middle BUBBLE"));
+    inner.addEventListener("click", () => console.log("inner BUBBLE"));
+
+    //Delegation
+    list.addEventListener("click", e => {
+    if (e.target.tagName === "LI") {
+        console.log("Delegated click on:", e.target.textContent);
+    }
+    });
+
+    //Task Part 2: stop propagation at middle
+    middle.addEventListener("click", (e) => {
+    console.log("middle clicked - stopping");
+    //e.stopPropagation();
+    }, false);
+
+    //Task Part 3: custom event
+    inner.addEventListener("click", () => {
+    const magicEvent = new CustomEvent("magic", {
+        detail: { triggeredBy: "inner" }
+    });
+    outer.dispatchEvent(magicEvent);
+    });
+
+    outer.addEventListener("magic", (e) => {
+    console.log("Magic happened from:", e.detail.triggeredBy);
+    });
+
+  </script>
+
+</body>
+</html>

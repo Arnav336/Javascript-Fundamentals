@@ -18,7 +18,7 @@ let head = {
     money: 2000,
     __proto__:bed
   };
-  console.log(pockets.pen);
+  console.log(pockets.pen)
   console.log(bed.glasses)
   console.log(pockets.glasses)
   console.log(table.money)

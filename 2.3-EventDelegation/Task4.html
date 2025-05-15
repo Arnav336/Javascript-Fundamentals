@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 4</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 4</title>
+  <style>
+    .tooltip {
+      position: absolute;
+      padding: 5px 8px;
+      background: #333;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      max-width: 200px;
+      word-wrap: break-word;
+      z-index: 1000;
+    }
+  </style>
 </head>
 <body>
-    <script>
-    </script>
+
+  <button data-tooltip="the tooltip is longer than the element">Short button</button>
+  <button data-tooltip="HTML<br>tooltip">One more button</button>
+
+  <script>
+    let currentTooltip;
+
+    document.addEventListener('mouseover', function(e) {
+      const target = e.target.closest('[data-tooltip]');
+      if (!target) return;
+
+      const tooltip = document.createElement('div');
+      tooltip.className = 'tooltip';
+      tooltip.innerHTML = target.dataset.tooltip;
+      document.body.append(tooltip);
+
+      const coords = target.getBoundingClientRect();
+
+      let left = coords.left + (target.offsetWidth - tooltip.offsetWidth) / 2;
+      if (left < 0) left = 0;
+
+      let top = coords.top - tooltip.offsetHeight - 5;
+      if (top < 0) {
+        top = coords.bottom + 5;
+      }
+
+      tooltip.style.left = left + window.scrollX + 'px';
+      tooltip.style.top = top + window.scrollY + 'px';
+
+      currentTooltip = tooltip;
+    });
+
+    document.addEventListener('mouseout', function(e) {
+      if (currentTooltip) {
+        currentTooltip.remove();
+        currentTooltip = null;
+      }
+    });
+  </script>
 </body>
 </html>

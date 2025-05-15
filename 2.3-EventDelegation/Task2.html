@@ -7,6 +7,38 @@
 </head>
 <body>
     <script>
+        let treedata={
+            Animals:{Mammals:{Cows:0,Donkeys:0,Dogs:0,Tigers:0},Other:{Snakes:0,Birds:0,Lizards:0}},
+            Fishes:{Aquarium:{Guppy:0,Goldfish:0,Shark:0}}
+        }
+        
+        function treebuilder(tree){
+            let ul=document.createElement('ul');
+            for (let child in tree){
+                let li=document.createElement('li');
+                let span=document.createElement('span')
+                span.textContent=child;
+                li.append(span);
+                let childtree=treebuilder(tree[child]);
+                if (childtree) {
+                li.append(childtree);
+                }
+                ul.append(li);
+            }
+            return ul;
+        }
+        let newTree=treebuilder(treedata);
+        document.body.append(newTree);
+        newTree.addEventListener('click',event=>{
+            if(event.target.tagName!=='SPAN')
+            return;
+            let li=event.target.parentElement;
+            let child=li.querySelector('ul')
+            if(child){
+                child.hidden=!child.hidden;//Toggle function
+            }
+        })
+        
     </script>
 </body>
 </html>
