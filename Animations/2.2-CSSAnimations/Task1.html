@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <style>
+        img{
+            cursor:pointer;
+        }
+        #flyjet{
+            width:40px;
+            height:24px;
+            transition: all 3s;
+        }
+        #flyjet.growing{
+            width:400px;
+            height:240px;
+        }
+    </style>
+</head>
+<body>
+      <img id="flyjet" src="https://en.js.cx/clipart/flyjet.jpg">
+    <script>
+        let ended=false;
+        let flyjet=document.getElementById('flyjet');
+            flyjet.onclick = function() {
+
+      flyjet.addEventListener('transitionend', function() {
+        if (!ended) { // check to show the message only once
+          ended = true;
+          alert('Done!');
+        }
+      });
+
+      flyjet.classList.add('growing');
+    }
+    </script>
+</body>
+</html>

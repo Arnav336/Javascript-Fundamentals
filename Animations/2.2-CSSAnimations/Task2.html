@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <style>
+        .circle{
+            transition-property:width,height;
+            transition-duration: 2s;
+            position:fixed;
+            transform:translate(-50%,-50%);
+            background-color:red;
+            border-radius:50%;
+
+        }
+    </style>
+</head>
+<body>
+    <button onclick="showCircle(150, 150, 100)">showCircle(150, 150, 100)</button>
+    <script>
+        function showCircle(x,y,r){
+            let div=document.createElement('div');
+            div.style.width=0;
+            div.style.height=0;
+            div.style.left=x+'px';
+            div.style.top=y+'px'
+            div.className='circle';
+            document.body.append(div);
+            setTimeout(()=>{
+                div.style.width=r*2+'px';
+                div.style.height=r*2+'px';
+            },0);
+        }
+
+    </script>
+</body>
+</html>

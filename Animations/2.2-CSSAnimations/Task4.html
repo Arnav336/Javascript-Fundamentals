@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    img {
+      display: block;
+      cursor: pointer;
+      transition: all 3s cubic-bezier(0.25, 0.1, 0.25, 1); /* Smoher curve */
+    }
+    
+    #flyjet {
+      width: 40px;
+      height: 24px;
+    }
+    
+    #flyjet.growing {
+      width: 400px;
+      height: 240px;
+    }
+  </style>
+</head>
+<body>
+  <img id="flyjet" src="https://en.js.cx/clipart/flyjet.jpg">
+  <script>
+    flyjet.onclick = function() {
+      this.classList.toggle('growing'); // Toggle on each click
+    };
+  </script>
+</body>
+</html>
