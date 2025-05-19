@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function infinite(){
+            while(true){
+                let date=new Date()
+                let bottom=document.documentElement.getBoundingClientRect().bottom;
+                if(bottom>document.documentElement.clientHeight+100)
+                break;
+                document.body.insertAdjacentHTML("beforeend",`<p>Date:${date}</p>`)
+            }
+        }
+        window.addEventListener("scroll",infinite)
+        infinite()
+    </script>
+</body>
+</html>

@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document</title>\
+    <style>
+        textarea{
+            resize: none;
+            width:200px;
+            height: 60px;
+        }
+    </style>
 </head>
 <body>
-    <textarea style="width:200px; height: 60px;" id="area" placeholder="Write here"></textarea>
+    <textarea id="area" placeholder="Write here"></textarea>
 <script>
     area.value = localStorage.getItem('area');
     area.oninput = () => {
